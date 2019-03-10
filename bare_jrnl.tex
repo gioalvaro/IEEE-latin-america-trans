@@ -255,7 +255,7 @@
 % needed.
 % The latest version and documentation can be found at:
 % http://www.ctan.org/pkg/fixltx2e
-
+\usepackage{xcolor}
 
 %\usepackage{stfloats}
 % stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
@@ -375,7 +375,7 @@
         and~Horacio~Leone% <-this % stops a space
 \thanks{A. Fraga, M. Vegetti and H. Leone estan con el Instituto de Desarrollo y Dise\~no (INGAR) - CONICET-UTN, Santa Fe, S3000 Argentina   e-mail: \{alvarofraga,mvegetti,hleone\}@santafe-conicet.gov.ar }
 % <-this % stops a space
-\thanks{Manuscripto enviado Febrero 26, 2019.}}
+\thanks{Manuscripto enviado Marzo 11, 2019.}}
 
 % note the % following the last \IEEEmembership and also \thanks - 
 % these prevent an unwanted space from occurring between the last author name
@@ -398,7 +398,7 @@
 
 
 % The paper headers
-\markboth{IEEE Latin America Transaction, 6442}%
+\markboth{IEEE Latin America Transaction, 396}%
 {Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
 % The only time the second header will appear is for the odd numbered pages
 % after the title page when using the twoside option.
@@ -482,7 +482,7 @@ Los sistemas de informaci\'on deben ser adaptados o modificados para seguir sien
 \item Conceptual: concerniente a la parte sint\'actica y sem\'antica de la informaci\'on que debe ser compartida.
 \end{itemize}
 
-Este art\'iculo se enfoca en la interoperabilidad conceptual, m\'as precisamente en un subgrupo dentro de la misma, la interoperabilidad sem\'antica. Lograr este tipo de interoperabilidad, requiere en primera instancia conocer la conceptualizaci\'on formal existente detr\'as de los t\'erminos manejados en cada dominio involucrado para luego, integrarlas.
+Este art\'iculo se enfoca en la interoperabilidad conceptual, m\'as precisamente en un subgrupo dentro de la misma, la interoperabilidad sem\'antica. Esta interoperabilidad es necesaria para lograr integrar los procesos productivos entre distintas industrias de manera efectiva. \textcolor{red}{ Pudiendo resolver problemas que potencialmente surjan al tratar de integrar los sistemas de informaci\'on, como es la definici\'on m\'ultiple de un mismo t\'ermino proveniente de distintos modelos de informaci\'on, por ejemplo, un t\'ermino como lo es \emph{Recurso} puede llegar a tener diferentes interpretaciones (ver tabla \ref{tabla1}) de acuerdo a las siguientes definiciones: I) ``Resultado de un proceso" \cite{ISOSupport} o II) ``Cualquier dispositivo, herramienta o medio, exceptuando la materia prima y productos finales, los que pueden servir para producir bienes o servicios" \cite{ISO2004}. Lograr este tipo de interoperabilidad, requiere en primera instancia conocer las conceptualizaciones formales existentes detr\'as de los t\'erminos manejados en cada dominio involucrado para luego, integrarlas.}
 
 Para compartir las conceptualizaciones de los t\'erminos involucrados es necesario utilizar t\'ecnicas, tecnolog\'ias, normas y pol\'iticas consensuadas entre los participantes. 
 
@@ -494,11 +494,13 @@ El comit\'e mencionado publica est\'andares que buscan implementarse en las indu
 
 A pesar que los est\'andares definidos por el comit\'e t\'ecnico 184, subcomit\'e 4 buscan resolver los problemas de interoperabilidad, cuando se implementan en conjunto algunos de estos est\'andares se detectan potenciales problemas sem\'anticos en el manejo de la terminolog\'ia \cite{Young2007}. 
 
-Por estas razones conseguir que los sistemas de informaci\'on heterog\'eneos que implementen un conjunto de est\'andares pertenecientes al comit\'e ISO TC184/SC4 interoperen representa un gran desaf\'io \cite{Fortineau2013}. Como un primer paso para superar este desaf\'io, el presente trabajo propone una red de ontolog\'ias que act\'ua como intermediaria entre los sistemas heterog\'eneos que implementan los est\'andares mencionados. Las ontolog\'ias que forman parte de esta red est\'an implementadas utilizando tecnolog\'ias y lenguajes de la Web Sem\'antica. En particular, se ha utilizado el lenguaje OWL (Ontology Web Language) para la definici\'on de las ontolog\'ias, SWRL (Semantic Web Rule Language) para la definici\'on de alineaciones entre conceptos de las distintas ontolog\'ias y el lenguaje de consulta SPARQL para la recuperaci\'on de informaci\'on.
+Por estas razones conseguir que los sistemas de informaci\'on heterog\'eneos que implementen un conjunto de est\'andares pertenecientes al comit\'e ISO TC184/SC4 interoperen representa un gran desaf\'io \cite{Fortineau2013}. Para superar este desaf\'io, el presente trabajo propone una red de ontolog\'ias que act\'ua como intermediaria entre los sistemas heterog\'eneos que implementan los est\'andares \textcolor{red}{presentes}. Las ontolog\'ias que forman parte de esta red est\'an implementadas utilizando tecnolog\'ias y lenguajes de la Web Sem\'antica. En particular, se ha utilizado el lenguaje OWL (Ontology Web Language) para la definici\'on de las ontolog\'ias, SWRL (Semantic Web Rule Language) para la definici\'on de alineaciones entre conceptos de las distintas ontolog\'ias y el lenguaje de consulta SPARQL para la recuperaci\'on de informaci\'on.
 
 El contenido de este art\'iculo est\'a organizado de la siguiente manera. En la secci\'on II se introducen los trabajos relacionados que aportaron a la motivaci\'on de este art\'iculo. La secci\'on III describe un resumen del contexto del problema y detalla la red de ontolog\'ias propuesta, especificando la arquitectura, sus niveles, relaciones e interacci\'on entre los componentes de esta. La secci\'on IV, presenta una descripci\'on de la integraci\'on de la formalizaci\'on de los est\'andares ISO 10303-49 e IDEF3 (Integrated DEFinition for Process Description Capture Method) a la red propuesta. Finalmente, la secci\'on V aborda las conclusiones y trabajo futuro.
 
-\section{Trabajos Relacionados}
+\textcolor{red}{Los enfoques para gestionar sistemas que administran la informacion de los productos dentro del ciclos de vida de producto}
+
+\section{Motivaci\'on y Trabajos Relacionados}
 
 Un \'area de investigaci\'on que ha surgido para mantener y gestionar de manera eficiente los modelos de informaci\'on apuntando a mejorar el desarrollo y trabajo colaborativo entre todos los actores involucrados en la industria de la manufactura \cite{Terzi2010} es la gesti\'on del ciclo de vida de productos (PLM). Este \'area resulta un reto en la pr\'actica de la ingenier\'ia al ser un campo, donde distintas disciplinas intervienen en la gesti\'on de los productos, sin mencionar el escenario en el que se desempe\~nan las nuevas industrias, distribuidas geogr\'aficamente. Diferentes normas coexisten para las diversas funciones de manufactura, lo que hace pr\'acticamente imposible llegar a un acuerdo sobre la utilizaci\'on de un \'unico est\'andar. 
 
@@ -598,7 +600,7 @@ Se comenzar\'a describiendo dando un resumen de la problem\'atica que se encuent
 
 \subsection{Arquitectura Multinivel}
 
-La red de ontolog\'ias propuesta se puede esquematizar mediante la Figura \ref{fig1}, la misma act\'ua como mediador entre los diferentes sistemas industriales. Esto logra que la propuesta abarque un gran espectro de acci\'on sobre distintos dominios de aplicaci\'on y a trav\'es de las etapas del ciclo de vida de producto. Es importante mencionar que, la propuesta sirve no solo para resolver la interoperabilidad entre sistemas que emplean los est\'andares de comit\'e antes mencionado, sino para todos aquellos sistemas que implementen alg\'un tipo de vocabulario, modelo o est\'andar que pueda ser formalizado por una ontolog\'ia en OWL. 
+\textcolor{red}{La figura \ref{fig1} esquematiza la red de ontolog\'ias propuesta, la misma act\'ua como mediador entre los diferentes sistemas industriales}. \textcolor{red}{Este enfoque garantiza} que la propuesta abarque un gran espectro de acci\'on sobre distintos dominios de aplicaci\'on y a trav\'es de las etapas del ciclo de vida de producto. Es importante mencionar que, la propuesta sirve no solo para resolver la interoperabilidad entre sistemas que emplean los est\'andares de comit\'e antes mencionado, sino para todos aquellos sistemas que implementen alg\'un tipo de vocabulario, modelo o est\'andar que pueda ser formalizado por una ontolog\'ia en OWL. 
 
 \begin{figure}[!t]
 \centering
@@ -694,13 +696,16 @@ El m\'odulo del t\'ermino \emph{Enterprise} (Figura \ref{fig7}), es refinado usa
 
 En el nivel de est\'andares se agrupan las diferentes ontolog\'ias, implementadas en OWL, que formalizan los est\'andares, que van a interoperar, algunos de los cuales se encuentran mencionados previamente en las Tablas \ref{tabla1}, \ref{tabla2} y \ref{tabla3}. Es importante mencionar que tambi\'en se pueden incorporar otros tipos de modelos de datos de producto que no pertenezcan a los est\'andares publicados por el ISO TC184/SC4.  
 
-Las ontolog\'ias integradas en este \'ultimo nivel se les define un conjunto de reglas de inferencia, definidas en el lenguaje de reglas sem\'anticas (SWRL) para establecer una correspondencia con los t\'erminos definidos en el nivel de refinamiento. Este conjunto de reglas de inferencias es tratado como una capa intermedia, que provee el enlace entre los niveles de refinamiento y de est\'andares. 
+\textcolor{red}{Los modelos de datos} integrados en este \'ultimo nivel se les define un conjunto de reglas de inferencia, definidas en el lenguaje de reglas sem\'anticas (SWRL) para establecer una correspondencia con los t\'erminos definidos en el nivel de refinamiento. Este conjunto de reglas de inferencias es tratado como una capa intermedia, que provee el enlace entre los niveles de refinamiento y de est\'andares. 
 
 A continuaci\'on, se describe el proceso para incorporar nuevas ontolog\'ias a este nivel de la arquitectura. 
 
-\subsection{Integraci\'on de Ontolog\'ia a la Red}
+\subsection{Extensi\'on mediante la incorporaci\'on de nuevo modelos de datos}
 
-El proceso de integraci\'on a la Red, comienza seleccionando el est\'andar, lenguaje, vocabulario o modelo que necesita ser integrado con otros est\'andares ya incorporados a la red. Una vez realizada esta selecci\'on, se identifican las fuentes de informaci\'on que se utilizar\'an para desarrollar la ontolog\'ia. Estas fuentes de informaci\'on pueden ser ontol\'ogicas o no ontol\'ogicas. Dentro de las ontol\'ogicas, es posible destacar diversas contribuciones por parte de la academia de ontolog\'ias basadas en est\'andares o modelos.
+\textcolor{red}{El proceso de incorporaci\'on es importante en la presente propuesta debido a la flexibilidad que aporta a la red de ontolog\'ias. Esta red es capaz de proveer mediaci\'on entre diferentes modelos de datos del dominio de la manufactura, no tan solo aquellos est\'andares que forman parte del comit\'e t\'ecnico 184 subcomit\'e 4, sino que adem\'as se pueden incorporar vocabularios, modelos, est\'andares que no pertenezcan al mencionado comit\'e simplemente agregando su formalizaci\'on en OWL en el \'ultimo nivel de la red. }
+
+
+El proceso de integraci\'on de nuevo modelos de datos a la Red, comienza seleccionando el est\'andar, lenguaje, vocabulario o modelo que necesita ser integrado con otros est\'andares ya incorporados a la red. Una vez realizada esta selecci\'on, se identifican las fuentes de informaci\'on que se utilizar\'an para desarrollar la ontolog\'ia. Estas fuentes de informaci\'on pueden ser ontol\'ogicas o no ontol\'ogicas. Dentro de las ontol\'ogicas, es posible destacar diversas contribuciones por parte de la academia de ontolog\'ias basadas en est\'andares o modelos.
 
 Por otro lado, las fuentes no ontol\'ogicas representan los documentos que describen las conceptualizaciones de t\'erminos, relaciones y restricciones entre t\'erminos. Las normas publicadas por el ISO TC186/SC4 se encuentran en esta categor\'ia. 
 
@@ -708,7 +713,7 @@ Una vez identificadas este tipo de fuentes, son estudiadas y analizadas para con
 
 Una vez realizada la actividad de fusi\'on de ontolog\'ias, se la somete a una evaluaci\'on. Se proponen dos herramientas diferentes para esta actividad. El primero es OOPS! Scanner \cite{Poveda-Villalon2009a}, el cual se emplea para encontrar errores de diseño comunes y verificar la consistencia de la ontolog\'ia. La segunda consiste en usar preguntas de competencia escritas en el lenguaje de consulta SPARQL para verificar si cumple los requisitos establecidos para la incorporaci\'on de la nueva ontolog\'ia. Si la ontolog\'ia pasa ambas pruebas, se importa a la red ontol\'ogica como parte de su nivel de est\'andares.
 
-A continuaci\'on, se definen un conjunto de reglas SWRL para alinear la nueva ontolog\'ia incorporada con los conceptos ya definidos por la red. Luego, la red actualizada es probada utilizando una vez m\'as las preguntas de competencia. Estas preguntas fueron definidas en la fase de educci\'on de requisitos de la red de ontolog\'ia, algunas de las mismas se pueden apreciar en la Tabla \ref{tabla4}.
+A continuaci\'on, se definen un conjunto de reglas SWRL para alinear la nueva ontolog\'ia incorporada con los conceptos ya definidos por la red. Luego, la red actualizada es verificada utilizando una vez m\'as las preguntas de competencia. Estas preguntas fueron definidas en la fase de educci\'on de requisitos de la red de ontolog\'ia, algunas de las mismas se pueden apreciar en la Tabla \ref{tabla4}.
 
 
 \begin{table}[!t]
@@ -731,17 +736,27 @@ FILTER regex(str(?product),``\textless resource\_name \textgreater \$")}  \\  \h
 \end{tabular}
 \end{table}
 
-Las preguntas de competencia se formalizaron empleando el lenguaje de consulta SPARQL normalizado por la W3C. La estructura para realizar dichas consultas consta de dos partes principales, delimitadas por el uso de palabras claves. La primera parte comienza con la declaraci\'on de la palabra clave SELECT, a continuaci\'on, se anexa los nombres de las variables que se desean que retorne la ejecuci\'on de la consulta. La segunda parte de estas consultas est\'a compuesta por la estructura que comienza con la palabra clave WHERE, en dicha porci\'on se debe detallar patrones de tripletas que se desean localizar dentro de la ontolog\'ia, aplicando tambi\'en los nombres de las variables que se desean devolver por la porci\'on delimitada por la palabra clave SELECT. 
+\subsection{Verificaci\'on de la Red de Ontolog\'ia}
+
+\textcolor{red}{Cuantificar la calidad de una ontolog\'ia puede dificultarse, debido a la ausencia de un método formal aceptado que tenga en cuenta todos los criterios (coherencia, concisi\'on, inteligibilidad, adaptabilidad, compromiso ontol\'ogico m\'inimo, etc.) que pueden aplicarse para evaluar las ontolog\'ias de dominio.}
+
+\textcolor{red}{Seg\'un G\'omez-P\'erez \cite{Gomez-Perez2007OntologicalWeb}, la fase de evaluaci\'on ontol\'ogica comprende tres aspectos: i) validaci\'on ontol\'ogica, ii) verificaci\'on ontol\'ogica y iii) evaluaci\'on ontol\'ogica. Las actividades de validaci\'on y verificaci\'on est\'an asociadas con un juicio t\'ecnico del contenido de la ontolog\'ia con respecto a un marco de referencia, que est\'an asociadas a la especificaciones de requisitos, preguntas de competencia o el mundo real. La validaci\'on est\'a relacionada con el reflejo del dominio en la definici\'on y modelado de la ontolog\'ia, mientras que la verificaci\'on intenta probar que las definiciones de ontolog\'ia implementan correctamente los requisitos de ontolog\'ia, esto \'ultimo relacionado con las preguntas de competencia \cite{Bezerra2013EvaluatingQuestions}. A su vez, la evaluaci\'on se centra en juzgar el contenido de la ontolog\'ia desde el punto de vista del usuario y la aplicaci\'on de esta en el dominio para la que fue creada. }
+
+Esta red de ontolog\'ia se verifica por cada integraci\'on que se realiza en el \'ultimo nivel por medio de las preguntas de competencia. Las preguntas de competencia se formalizaron empleando el lenguaje de consulta SPARQL normalizado por la W3C. La estructura para realizar dichas consultas consta de dos partes principales, delimitadas por el uso de palabras claves. La primera parte comienza con la declaraci\'on de la palabra clave SELECT, a continuaci\'on, se anexa los nombres de las variables que se desean que retorne la ejecuci\'on de la consulta. La segunda parte de estas consultas est\'a compuesta por la estructura que comienza con la palabra clave WHERE, en dicha porci\'on se debe detallar patrones de tripletas que se desean localizar dentro de la ontolog\'ia, aplicando tambi\'en los nombres de las variables que se desean devolver por la porci\'on delimitada por la palabra clave SELECT. 
 
 Otras secciones pueden ser declaradas dentro de la consulta mediante el uso de otras palabras claves, por ejemplo, la palabra clave FILTER, dicha palabra clave permite separar subconjuntos de tripletas utilizando condiciones l\'ogicas o expresiones regulares. 
 
-En la Tabla \ref{tabla4}, la primera fila posee la pregunta ``¿Qu\'e recursos necesita el proceso X?". Esta pregunta puede ser transformada en un equivalente en SPARQL, la cual se presenta en la segunda columna de la misma fila. La consulta devuelve la variable \emph{?resource}, que es usada en el patr\'on de tripletas declarado por la porci\'on de la palabra clave WHERE, que indica que dicha variable se encuentra relacionada, a trav\'es de la propiedad \emph{tc:usedBy} con otra variable denominada \emph{?process}, la que es empleada en la \'ultima porci\'on de la consulta para buscar coincidencias de palabras ingresada en la funci\'on \emph{regex}, la cual es aplicada para definir expresiones regulares y as\'i filtrar resultados de las tripletas identificadas. Resumiendo, lo que esta consulta devuelve son los individuos que est\'en relacionados por la propiedad \emph{tc:usedBy}, con determinados valores de cadena de caracteres en la variable \emph{?process}.
+En la Tabla \ref{tabla4}, la primera fila muestra la pregunta ``¿Qu\'e recursos necesita el proceso X?". Esta pregunta puede ser transformada en un equivalente en SPARQL, la cual se presenta en la segunda columna de la misma fila. La consulta devuelve la variable \emph{?resource}, que es usada en el patr\'on de tripletas declarado por la porci\'on de la palabra clave WHERE, que indica que dicha variable se encuentra relacionada, a trav\'es de la propiedad \emph{tc:usedBy} con otra variable denominada \emph{?process}, la que es empleada en la \'ultima porci\'on de la consulta para buscar coincidencias de palabras ingresada en la funci\'on \emph{regex}, la cual es aplicada para definir expresiones regulares y as\'i filtrar resultados de las tripletas identificadas. Resumiendo, lo que esta consulta devuelve son los individuos que est\'en relacionados por la propiedad \emph{tc:usedBy}, con determinados valores de cadena de caracteres en la variable \emph{?process}.
 
 La siguiente pregunta ``¿Qu\'e recursos son necesarios para ejecutar un plan de proceso?", tiene como prop\'osito retornar los recursos que se ven involucrados a lo largo de un plan de proceso. Esta se diferencia de la anterior en que devuelve todos los recursos involucrados en el conjunto de procesos asociados a un plan determinado. Al igual que la consulta anterior, se puede escribir un equivalente en SPARQL para ejecutarla sobre la base de conocimiento. La misma emplea una variable de retorno que representa a los individuos del t\'ermino \emph{Resource} asociados, por medio de la propiedad \emph{tc.usedBy}, con el t\'ermino \emph{Process}. A su vez se declara el patr\'on de tripleta que relaciona a los individuos del t\'ermino \emph{Process}, representados por la variable \emph{?process}, con los individuos del t\'ermino \emph{Process\_Plan}, representados por la variable \emph{?process\_plan}, por \'ultimo, se declara un filtro para definir, como en el caso anterior, el nombre del plan de proceso del cual se desean conocer los recursos para su ejecuci\'on.
 
-La \'ultima pregunta de la Tabla \ref{tabla4}, ``¿Qu\'e productos hacen un recurso X?", retorna los productos, mediante la declaraci\'on de la variable \emph{?product}, que a lo largo de su proceso de fabricaci\'on necesitan o requieren de un respectivo recurso, que es representado por la variable \emph{?resource}, la que en la consulta presentada posee un filtro para identificar ese recurso necesario.
+La \'ultima pregunta de la Tabla \ref{tabla4}, ``¿Qu\'e productos hacen uso de un recurso X?", retorna los productos, mediante la declaraci\'on de la variable \emph{?product}, que a lo largo de su proceso de fabricaci\'on necesitan o requieren de un respectivo recurso, que es representado por la variable \emph{?resource}, la que en la consulta presentada posee un filtro para identificar ese recurso necesario.
 
-La implementaci\'on de la red de ontolog\'ia se est\'a realizando en OWL (Ontology Web Language) utilizando el editor Pr\'oteg\'e 5.2.0. El proceso comenz\'o por la codificaci\'on de todas ontolog\'ias por separado. El archivo principal conteniendo la ontolog\'ia del nivel principal de la red, fue llamado CoreConcepts.owl. Los archivos conteniendo las codificaciones de los m\'odulos que forman al nivel de refinamiento (Resourse, Product, Process y Enterprise) fueron llamados ResourceMod.owl, ProductMod.owl, ProcessMod.owl y EnterpriseMod.owl. 
+\textcolor{red}{En la subsecci\'on siguiente se describe el como se llevo a cabo la implmentaci\'on de la red de ontolog\'ias y que tecnolog\'ias se han utilizado.}
+
+\subsection{Implementaci\'on}
+
+La implementaci\'on de la red de ontolog\'ia se realiz\'o en OWL (Ontology Web Language) utilizando el editor Pr\'oteg\'e 5.2.0. El proceso comenz\'o por la codificaci\'on de todas ontolog\'ias por separado. El archivo principal conteniendo la ontolog\'ia del nivel principal de la red, fue llamado CoreConcepts.owl. Los archivos conteniendo las codificaciones de los m\'odulos que forman al nivel de refinamiento (Resourse, Product, Process y Enterprise) fueron llamados ResourceMod.owl, ProductMod.owl, ProcessMod.owl y EnterpriseMod.owl. 
 
 Los m\'odulos del nivel de refinamiento: Product Module, Process Module, Resource Module y Enterprise Module, se encuentran implementados de manera aislada en el lenguaje OWL. Estas cuatro ontolog\'ias son importadas en la ontolog\'ia   principal para su uso. Los t\'erminos de nivel de refinamiento, a su vez se vinculan tanto de manera vertical como horizontal. Es decir, se encuentran propiedades que pueden vincular a las entidades de un m\'odulo con entidades de otro adyacente, como tambi\'en, con el t\'ermino principal que da nombre al m\'odulo. 
 
@@ -753,7 +768,7 @@ En la siguiente secci\'on se ilustra c\'omo se incorporan dos est\'andares, uno 
 
 \section{Caso de estudio}
 
-En esta secci\'on se presenta un caso de estudio, en el cual se pone a prueba la red de ontolog\'ia mostrando su alcance y utilidad mediante la incorporaci\'on del est\'andar ISO 10303-49 y el lenguaje de modelado de procesos IDEF3 a la red propuesta.
+En esta secci\'on se presenta un caso de estudio, en el cual se pone a prueba la red de ontolog\'ia mostrando su alcance, validez y utilidad mediante la incorporaci\'on del est\'andar ISO 10303-49 y el lenguaje de modelado de procesos IDEF3 a la red propuesta.
 
 En la Figura \ref{fig8} se muestra un esquema gen\'erico, ilustrando el rol y la funci\'on de mediador que ejerce la red de ontolog\'ia entre los dos sistemas que implementan cada uno de los modelos. A partir de estos sistemas se obtendr\'an los individuos que poblar\'an las diferentes ontolog\'ias que tienen la red propuesta. Uno de los sistemas basado en IDEF3 y el otro adhiere al est\'andar ISO 10303-49.
 
@@ -931,7 +946,7 @@ En tanto, la Figura \ref{fig13} presenta los individuos obtenidos como resultado
 \label{fig13}
 \end{figure}
 
-
+Hacer mencion a los resultados de las preguntas de competencia como forma de validacion de la propuesta.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -1034,7 +1049,7 @@ En tanto, la Figura \ref{fig13} presenta los individuos obtenidos como resultado
 
 Este trabajo presenta una red de ontolog\'ias multinivel, como soluci\'on al problema de interoperabilidad de sistemas heterog\'eneos que implementan los est\'andares del comit\'e 184 subcomit\'e 4 de la Organizaci\'on Internacional de Est\'andares. 
 
-La ventaja principal de esta red, adem\'as de permitir interoperar con modelos implementados del mencionado comit\'e de la ISO puede ser extendida y usada para otros est\'andares y modelos de informaci\'on. Esto se logra agregando la formalizaci\'on del modelo requerido y las reglas necesarias para el alineamiento de las ontolog\'ias participantes. Pudiendo servir esta red de ontologias como mediador entre sistemas heterog\'eneos. Por esta raz\'on los sistemas inform\'aticos que se encuentren en cada industria no necesitar\'an efectuar cambios en su estructura.
+\textcolor{red}{La ventaja principal de esta red, adem\'as de permitir interoperar con modelos implementados del mencionado comit\'e de la ISO puede ser extendida y usada para otros est\'andares y modelos de informaci\'on. Esto se logra agregando la formalizaci\'on del modelo requerido y las reglas necesarias para el alineamiento de las ontolog\'ias participantes. Pudiendo servir esta red de ontologias como mediador entre sistemas heterog\'eneos. Por esta raz\'on los sistemas inform\'aticos que se encuentren en cada industria no necesitar\'an efectuar cambios en su estructura. Solo se requeriria la formalizacion de los modelos de datos utilizando OWL y la definicion de las correspondiente reglas de inferencia con terminos de la red.}
 
 Se mostr\'o la divisi\'on de la estructura de la red. El nivel principal posee cuatro t\'erminos que representan los conceptos considerados por varios autores como m\'as importantes en el dominio. El nivel de refinamiento detalla la conceptualizaci\'on de los t\'erminos del nivel principal haciendo uso de t\'erminos presentes en diversos est\'andares involucrados en este proyecto. El nivel de refinamiento, a trav\'es de reglas y un motor de inferencia alcanza un alineamiento con el nivel de est\'andares. El nivel de est\'andares posee las adaptaciones de los est\'andares, modelos o vocabularios para su uso en la red y lograr la interoperabilidad sem\'antica entre los mismos. 
 
@@ -1101,7 +1116,7 @@ Los autores agradecen el apoyo brindado por las siguientes instituciones: CONICE
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
 \bibliographystyle{ieeetr}
-\bibliography{references4}
+\bibliography{references9}
 
 
 
@@ -1119,7 +1134,7 @@ Los autores agradecen el apoyo brindado por las siguientes instituciones: CONICE
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{./figures/AF.jpg}}]{Álvaro Luis Fraga}
  , born May 17, 1989, in Ciudad Autonoma de Buenos Aires, Argentina. He received his degree in Information System Engineering in 2014 from the Facultad Regional Tucuman, Universidad Tenológica Nacional. He is currently a PhD candidate at the Institute of Development and Design (INGAR), an institute of double dependence with the National Council of Scientific and Technical Research of Argentina (CONICET) and the Universidad Tecnológica Nacional, where he conducts research in the area of ontologies applied in industry and is a member and active volunteer for over 10 years in the IEEE Argentina section.
 \end{IEEEbiography}
-\newpage
+%\newpage
 % if you will not have a photo at all:
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{./figures/MV.jpg}}]{Marcela Vegetti}
  is a professor at the Department of Information Systems Engineering of the Facultad Regional Santa Fe, Universidad Tecnológica Nacional (Santa Fe, Argentina). She also holds a position as assistant researcher at the National Council of Scientific and Technical Research of Argentina (CONICET), working at the "Instituto de Desarrollo y Diseño". She obtained her PhD. Degree in Engineering in Information Systems from Universidad Tecnológica Nacional in 2007. Her current research activities focus on the application of ontologies and semantic technologies for conceptual modeling and supporting interoperability in different domains.
