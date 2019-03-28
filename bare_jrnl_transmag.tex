@@ -474,6 +474,74 @@ IEEE, IEEEtran, IEEE Transactions on Magnetics, journal, \LaTeX, magnetics, pape
 \IEEEPARstart{L}{os} demo file is intended to serve as a ``starter file''
 for IEEE \textsc{Transactions on Magnetics} journal papers produced under \LaTeX\ using
 IEEEtran.cls version 1.8b and later.
+\IEEEPARstart{L}{os} efectos de la globalizaci\'on han modificado los escenarios en los que la econom\'ia se desenvolv\'ia. Las industrias fueron alcanzadas por este fen\'omeno y vieron como ventaja competitiva buscar aliados en industrias geogr\'aficamente distribuidas para colaborar en sus procesos productivos. Lograr esta colaboraci\'on implica que los sistemas de informaci\'on de las industrias puedan compartir sus conocimientos y modelos de datos. 
+
+Los sistemas de informaci\'on deben ser adaptados o modificados para seguir siendo \'utiles en estos nuevos escenarios, donde es probable que deban interactuar con otros sistemas de \'areas diferentes. La capacidad de un sistema de informaci\'on (SI) para intercambiar informaci\'on con otros sistemas se denomina ``interoperabilidad" \cite{Ray2006}. David Chen presenta en su trabajo Enterprise Interoperability Framework \cite{Sinderen2011}, parte de INTEROP Network of Excellence, tres grandes categor\'ias en los que se puede dividir la interoperabilidad. Estos son:
+
+\begin{itemize}
+\item T\'ecnica: trata de superar las incompatibilidades entre las diferentes tecnolog\'ias de informaci\'on.  
+\item Organizacional: se enfoca en la definici\'on de responsabilidades, autoridad, y estructura. 
+\item Conceptual: concerniente a la parte sint\'actica y sem\'antica de la informaci\'on que debe ser compartida.
+\end{itemize}
+
+Este art\'iculo se enfoca en la interoperabilidad conceptual, m\'as precisamente en un subgrupo dentro de la misma, la interoperabilidad sem\'antica. Esta interoperabilidad es necesaria para lograr integrar los procesos productivos entre distintas industrias de manera efectiva. Pudiendo resolver problemas que potencialmente surjan al tratar de integrar los sistemas de informaci\'on, como es la existencia de m\'ultiples definiciones para un mismo t\'ermino o el uso de m\'ultiples t\'erminos para referirse a un mismo concepto. Para compartir las conceptualizaciones de los t\'erminos involucrados es necesario utilizar t\'ecnicas, tecnolog\'ias, normas y pol\'iticas consensuadas entre los participantes. 
+
+
+
+Los est\'andares, son un buen punto de apoyo para llevar a cabo esta tarea. Sin embargo, existen varios est\'andares enfocados en la representaci\'on de conceptos de diferentes \'areas de las industrias y, en general, su integraci\'on tambi\'en requiere la soluci\'on de algunos problemas sem\'anticos. 
+
+En los sistemas de informaci\'on pertenecientes a la industria, donde los t\'erminos utilizados son compartidos y entendidos por los expertos, los est\'andares han tenido bastante aceptaci\'on para facilitar la interoperabilidad, especialmente en los que intercambian datos geom\'etricos de productos. Entre los est\'andares publicados con el prop\'osito de resolver el problema de la interoperabilidad de los sistemas que administran los datos del ciclo de vida de producto en las industrias, se puede destacar los que presenta el comit\'e t\'ecnico 184 subcomit\'e 4 de la Organizaci\'on Internacional de Est\'andares (ISO) \cite{Cutting-Decelle2007}. 
+
+A pesar que los est\'andares definidos por el comit\'e mencionado buscan resolver los problemas de interoperabilidad, cuando se implementan en conjunto algunos de estos est\'andares se detectan potenciales problemas sem\'anticos en el manejo de la terminolog\'ia \cite{Young2007}. Algunos ejemplos de estos problemas sem\'anticos se introducen en la siguiente secci\'on. 
+
+Debido a que el uso conjunto de los estándares definidos por el comité 184 subcomi'te 4 presenta inconsistencia semánticas, conseguir la interoperabilidad de los sistemas que los implementan representa un gran desafío  \cite{Fortineau2013}. Para superarlo este trabajo propone una red de ontolog\'ias que act\'ua como intermediaria entre los sistemas heterog\'eneos que implementan un conjunto de est\'andares del mencionado comit\'e. Las ontolog\'ias que forman parte de esta red est\'an implementadas utilizando tecnolog\'ias y lenguajes de la Web Sem\'antica. En particular, se ha utilizado el lenguaje OWL (Ontology Web Language) para la definici\'on de las ontolog\'ias, SWRL (Semantic Web Rule Language) para la definici\'on de alineaciones entre conceptos de las distintas ontolog\'ias y el lenguaje de consulta SPARQL para la recuperaci\'on de informaci\'on.
+
+El contenido de este art\'iculo est\'a organizado de la siguiente manera. En la secci\'on II se introducen los trabajos relacionados que aportaron a la motivaci\'on de este art\'iculo. La secci\'on III describe un resumen del contexto del problema y detalla la red de ontolog\'ias propuesta, especificando la arquitectura, sus niveles, relaciones e interacci\'on entre los componentes de esta. La secci\'on IV, presenta una descripci\'on de la integraci\'on de la formalizaci\'on de los est\'andares ISO 10303-49 e IDEF3 (Integrated DEFinition for Process Description Capture Method) a la red propuesta. Finalmente, la secci\'on V aborda las conclusiones y trabajo futuro.
+
+
+\section{Motivaci\'on y Trabajos Relacionados}
+
+Un \'area de investigaci\'on que ha surgido para mantener y gestionar de manera eficiente los modelos de informaci\'on apuntando a mejorar el desarrollo y trabajo colaborativo entre todos los actores involucrados en la industria de la manufactura \cite{Terzi2010} es la gesti\'on del ciclo de vida de productos (PLM). Este \'area resulta un reto en la pr\'actica de la ingenier\'ia al ser un campo, donde distintas disciplinas intervienen en la gesti\'on de los productos, sin mencionar el escenario en el que se desempe\~nan las nuevas industrias, distribuidas geogr\'aficamente. Diferentes normas coexisten para las diversas funciones de manufactura, lo que hace pr\'acticamente imposible llegar a un acuerdo sobre la utilizaci\'on de un \'unico est\'andar. 
+
+A pesar que los est\'andares, buscan consensuar las conceptualizaciones de los t\'erminos utilizados y proveer modelos de soporte en un determinado dominio, en el caso de las industrias que manejan modelos de productos informatizados buscan poder implementarse y uno de los objetivos es resolver los problemas de interoperabilidad. Mas a\'un, los est\'andares pueden servir como base para generar modelos que faciliten la integraci\'on con distintas tecnolog\'ias \cite{Irisarri2016AIndustry}.
+
+No obstante, como se ha mencionado en la secci\'on anterior, cuando se implementan en conjunto est\'andares pueden provocar potenciales problemas sem\'anticos \cite{Young2007}. 
+
+Los t\'erminos, espec\'ificos de distintas \'areas, pueden presentar ambig\"uedades en su conceptualizaci\'on, debido a la falta de un consenso s\'olido entre los expertos que desarrollan los est\'andares. En particular, los problemas que se hallaron tras un an\'alisis de estos est\'andares son los siguientes:
+
+\begin{itemize}
+    \item Falta de compatibilidad entre los modelos de informaci\'on y el vocabulario utilizado por cada uno.
+    \item Falta de formalizaci\'on en los conceptos que impide el procesamiento autom\'atico de la informaci\'on. 
+    \item Definiciones de t\'erminos en diferentes est\'andares no son consistentes. 
+\end{itemize}
+
+Ejemplos de los problemas se\~{n}alados anteriormente pueden verse reflejados en las tablas \ref{tabla1}, \ref{tabla2}, \ref{tabla3}. 
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Definiciones del termino recurso}
+\label{tabla1}
+\centering
+\begin{tabular}{|c|p{6cm}|}
+\hline
+\multirow{3}{*}{Recurso} & Cualquier dispositivo, herramienta o medio, exceptuando la materia prima y productos finales, los que pueden servir para producir bienes o servicios. ISO 15531-1, ISO 18629-1.\\ \cline{2-2}
+                         & Resultado de proceso. ISO 10303-239.\\ \cline{2-2}
+                         & Hecho, conceptos, o instrucciones acerca de un producto. ISO 10303-232. \\  \hline                                                                                                     
+\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Definiciones de Producto, Proceso y Recurso}
+\label{tabla2}
+\centering
+\begin{tabular}{|c|p{6cm}|}
+\hline
+Proceso & Un procedimiento particular para hacer algo que involucre uno o m\'as pasos u operaciones. Un Proceso puede producir un producto, una propiedad de un producto, o un aspecto de un producto. ISO 10303-49.\\ \cline{1-2}
+Recurso                         & Resultado de un Proceso. ISO 10303-239.\\ \cline{1-2}
+Producto                         & Cosa o substancia producido por un proceso natural o artificial. ISO 10303-1, ISO 15531-32. \\  \hline                                                                                                     
+\end{tabular}
+\end{table}
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 I wish you the best of success.

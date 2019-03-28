@@ -447,7 +447,7 @@ Interoperability, Ontology, Industrial Data
 % For peer review papers, you can put extra information on the cover
 % page as needed:
 % \ifCLASSOPTIONpeerreview
-% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \begin{center}  EDICS Category: 3-BBND \end{center}
 % \fi
 %
 % For peerreview papers, this IEEEtran command inserts a page break and
@@ -520,11 +520,12 @@ Ejemplos de los problemas se\~{n}alados anteriormente pueden verse reflejados en
 \caption{Definiciones del termino recurso}
 \label{tabla1}
 \centering
-\begin{tabular}{|c|p{6cm}|}
+\begin{tabular}{cp{6cm}}
+\hline
 \hline
 \multirow{3}{*}{Recurso} & Cualquier dispositivo, herramienta o medio, exceptuando la materia prima y productos finales, los que pueden servir para producir bienes o servicios. ISO 15531-1, ISO 18629-1.\\ \cline{2-2}
                          & Resultado de proceso. ISO 10303-239.\\ \cline{2-2}
-                         & Hecho, conceptos, o instrucciones acerca de un producto. ISO 10303-232. \\  \hline                                                                                                     
+                         & Hecho, conceptos, o instrucciones acerca de un producto. ISO 10303-232. \\  \hline \hline                                                                                                    
 \end{tabular}
 \end{table}
 
@@ -533,11 +534,12 @@ Ejemplos de los problemas se\~{n}alados anteriormente pueden verse reflejados en
 \caption{Definiciones de Producto, Proceso y Recurso}
 \label{tabla2}
 \centering
-\begin{tabular}{|c|p{6cm}|}
+\begin{tabular}{cp{6cm}}
+\hline
 \hline
 Proceso & Un procedimiento particular para hacer algo que involucre uno o m\'as pasos u operaciones. Un Proceso puede producir un producto, una propiedad de un producto, o un aspecto de un producto. ISO 10303-49.\\ \cline{1-2}
 Recurso                         & Resultado de un Proceso. ISO 10303-239.\\ \cline{1-2}
-Producto                         & Cosa o substancia producido por un proceso natural o artificial. ISO 10303-1, ISO 15531-32. \\  \hline                                                                                                     
+Producto                         & Cosa o substancia producido por un proceso natural o artificial. ISO 10303-1, ISO 15531-32. \\  \hline \hline                                                                                                    
 \end{tabular}
 \end{table}
 
@@ -546,11 +548,12 @@ Producto                         & Cosa o substancia producido por un proceso na
 \caption{Definiciones de recurso, producto e informaci\'on de producto}
 \label{tabla3}
 \centering
-\begin{tabular}{|c|p{4cm}|}
+\begin{tabular}{cp{4cm}}
+\hline
 \hline
 Recurso & Hechos, conceptos, o instrucciones acerca de un producto. ISO 10303-232.\\ \cline{1-2}
 Producto & Hechos, conceptos, o instrucciones. ISO 13584-102.\\ \cline{1-2}
-Informaci\'on de Producto & Hechos, conceptos, o instrucciones acerca de un producto. ISO 10303-1. \\  \hline                                                                                                     
+Informaci\'on de Producto & Hechos, conceptos, o instrucciones acerca de un producto. ISO 10303-1. \\  \hline \hline                                                                                                    
 \end{tabular}
 \end{table}
 
@@ -706,7 +709,7 @@ Los m\'odulos del nivel de refinamiento: Product Module, Process Module, Resourc
 
 El nivel de est\'andares consta de un archivo codificado en OWL, por cada est\'andar adaptado. Estos archivos son importados en la ontolog\'ia principal, en conjunto con reglas SWRL necesarias para lograr un emparejamiento con los t\'erminos definidos en la capa de refinamiento.
 
-Recapitulando, en esta secci\'on se ha descripto la red de ontolog\'ia, su arquitectura e implementaci\'on, como as\'i tambi\'en algunas preguntas de competencia en SPARQL que permiten validar la red, as\'i como obtener informaci\'on de las entidades. 
+Recapitulando, en esta secci\'on se ha presentado la red de ontolog\'ia, su arquitectura e implementaci\'on, como as\'i tambi\'en algunas preguntas de competencia en SPARQL que permiten validar la red, as\'i como obtener informaci\'on de las entidades. 
 
 
 
@@ -750,9 +753,10 @@ A continuaci\'on, se definen un conjunto de reglas SWRL para alinear la nueva on
 \caption{Preguntas de Inferencia en SPARQL}
 \label{tabla4}
 \centering
-\begin{tabular}{|p{3cm}|p{5cm}|}
+\begin{tabular}{p{3cm}p{5cm}}
 \hline
-\bfseries Pregunta & \bfseries Consulta \\
+\hline
+ Pregunta &  Consulta \\
 \hline
 ¿Qu\'e recursos necesita el proceso X? & SELECT ?resource WHERE {?resource tc:usedBy ?process. FILTER regex(str(?process), ``\textless process\_name \textgreater \$")} \\ \cline{1-2}
 ¿Qu\'e recursos son necesarios para ejecutar un plan de proceso? &  SELECT ?resourse WHERE {?resource tc:usedBy ?process.
@@ -761,7 +765,7 @@ A continuaci\'on, se definen un conjunto de reglas SWRL para alinear la nueva on
 ?process tc:requiredBy ?process\_plan. 
 ?process tc:produce ?product. 
 ?resource tc:usedBy ?process.
-FILTER regex(str(?product),``\textless resource\_name \textgreater \$")}  \\  \hline                                                                                                     
+FILTER regex(str(?product),``\textless resource\_name \textgreater \$")}  \\  \hline \hline                                                                                                    
 \end{tabular}
 \end{table}
 
@@ -800,15 +804,16 @@ La Tabla \ref{tabla5} y la Figura \ref{fig9} ilustran la definici\'on de algunos
 \caption{T\'erminos y definiciones ISO 10303-49}
 \label{tabla5}
 \centering
-\begin{tabular}{|c|p{4cm}|}
+\begin{tabular}{cp{4cm}}
 \hline
-\bfseries T\'erminos ISO 10303-49 & \bfseries Definiciones \\
+\hline
+ T\'erminos ISO 10303-49 &  Definiciones \\
 \hline
 Action\_resource\_requirement & Define los recursos requeridos para un proceso. \\ \cline{1-2}
 Product\_definition\_process & Representa la definici\'on de un producto, un producto o un aspecto de este. \\ \cline{1-2}
 Process\_product\_association & Especifica un proceso que lleva a cabo una caracter\'istica especifica de un producto. \\  \cline{1-2}
 Characterized\_product\_definition & Define las caracter\'isticas de un proceso. \\
-\hline
+\hline \hline
 \end{tabular}
 \end{table}
 
@@ -819,9 +824,10 @@ La Tabla \ref{tabla6}, muestra un extracto de tres reglas que han sido definidas
 \caption{Reglas de mapeo entre ISO 10303-49 y la red de ontolog\'ias}
 \label{tabla6}
 \centering
-\begin{tabular}{|p{2.5cm}|p{5cm}|}
+\begin{tabular}{p{2.5cm}p{5cm}}
 \hline
-\bfseries Nombre & \bfseries Regla \\
+\hline
+ Nombre &  Regla \\
 \hline
 R\_Process & \begin{verbatim}characterized_action_
 definition(?x) ^ 
@@ -848,7 +854,7 @@ process_product_association_
 process(?x, ?y) -> 
 Process_Activity(?x) ^ 
 Process(?y) ^ 
-composedBy(?x,?y) \end{verbatim} \\  \hline   
+composedBy(?x,?y) \end{verbatim} \\  \hline \hline   
 \end{tabular}
 \end{table}
 
@@ -860,7 +866,7 @@ El t\'ermino, unidad de comportamiento (UOB), en IDEF3, hace referencia al bloqu
 
 Para representar la divergencia o convergencia de los procesos, se utilizan las uniones o cruces. Estas pueden ser de ejecuci\'on en paralelo (AndJunction) o alternativo (OrJunction o XORJunction). As\'i tambi\'en, las ramificaciones de los caminos de ejecuci\'on pueden ser asincr\'onicas o sincr\'onicas. Los UOB pueden interactuar con objetos que pueden ser entradas (InputObject) o salidas (OutputObject) de los nodos de procesos. 
 
-Como bien se ha descripto en la secci\'on anterior, la red de ontolog\'ia para poder incorporar nuevas adaptaciones funcionales necesita de una transformaci\'on del modelo a una ontolog\'ia codificada en OWL y de un conjunto de reglas definidas en SWRL.
+Como bien se ha presentado en la secci\'on anterior, la red de ontolog\'ia para poder incorporar nuevas adaptaciones funcionales necesita de una transformaci\'on del modelo a una ontolog\'ia codificada en OWL y de un conjunto de reglas definidas en SWRL.
 
 En la Tabla \ref{tabla7} se muestran las entidades que est\'an involucradas en el caso de estudio por parte del sistema basado en IDEF3 y las entidades de la red de ontolog\'ias que ser\'an empleadas en la conformaci\'on de las reglas para la alineaci\'on.
 
@@ -869,15 +875,16 @@ En la Tabla \ref{tabla7} se muestran las entidades que est\'an involucradas en e
 \caption{T\'erminos involucrados en el caso de estudio}
 \label{tabla7}
 \centering
-\begin{tabular}{|c|p{4cm}|}
+\begin{tabular}{cp{4cm}}
 \hline
-\bfseries IDEF3 & \bfseries Refinement Level \\ \hline
+\hline
+IDEF3 &  Refinement Level \\ \hline
 UOB & Process\_Activity \\ \cline{1-2}
 TemporalLink & N/A \\ \cline{1-2}
 InputObject & Resource - Process\_Material \\ \hline   
 OutputObject & Product - Product\_Material \\ \hline
 AndJunctionSynchronous & N/A \\ 
-\hline
+\hline \hline
 \end{tabular}
 \end{table}
 
@@ -890,7 +897,7 @@ Una vez obtenida la adaptaci\'on del modelo IDEF3, se importa la ontolog\'ia a l
 \centering
 \begin{tabular}{|c|p{6cm}|}
 \hline
-\bfseries Nombre & \bfseries Regla \\ \hline
+ Nombre &  Regla \\ \hline
 UOB          & \begin{verbatim}UOB(?x) -> Process_Activity(?x) \end{verbatim} \\ \cline{1-2}
 TemporalLink & \begin{verbatim}Input_Object(?x) ^ 
 IDEF3_to(?x, ?y) ^ 
